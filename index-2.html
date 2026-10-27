@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ডা. মিহাম ও ডা. মুনা ওয়ান-স্টপ হেলথ সার্ভিস | কাতার ও বাংলাদেশ টেলিমেডিসিন</title>
+<style>
+  :root {
+    --teal: #0f766e;
+    --teal-dark: #064e3b;
+    --rose: #db2777;
+    --amber: #f59e0b;
+    --slate: #0f172a;
+    --bg: #f8fafc;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans Bengali', sans-serif; }
+  body { background: var(--bg); color: #1e293b; line-height: 1.6; }
+  body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); background: var(--slate); z-index: 200; }
+  .topbar { background: var(--slate); color: #e2e8f0; font-size: 12px; padding: 8px 16px; text-align: center; border-bottom: 2px solid var(--teal); }
+  .badge-bmdc { background: #059669; color: #fff; padding: 2px 8px; border-radius: 4px; font-weight: 700; margin-right: 6px; }
+  header { background: #fff; padding: 14px 20px; position: sticky; top: env(safe-area-inset-top, 0px); z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.06); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .logo { width: 44px; height: 44px; border-radius: 10px; background: linear-gradient(135deg, var(--teal-dark), var(--teal)); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 20px; flex-shrink: 0; }
+  .brand h1 { font-size: 18px; color: var(--slate); }
+  .brand p { font-size: 12px; color: var(--teal); font-weight: 600; }
+  .currency-bar { display: flex; gap: 6px; flex-wrap: wrap; background: #f1f5f9; padding: 4px; border-radius: 8px; }
+  .c-btn { border: none; padding: 6px 10px; border-radius: 6px; font-size: 12px; font-weight: 700; cursor: pointer; background: transparent; color: #334155; }
+  .c-btn.active { background: var(--teal); color: #fff; }
+  .hero { background: linear-gradient(135deg, #064e3b 0%, #0f766e 60%, #1e3a8a 100%); color: #fff; padding: 40px 20px; }
+  .container { max-width: 1140px; margin: 0 auto; }
+  .hero-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 28px; align-items: center; }
+  .pill { display: inline-block; background: rgba(255,255,255,0.15); padding: 4px 12px; border-radius: 99px; font-size: 12px; margin-bottom: 12px; border: 1px solid rgba(255,255,255,0.25); }
+  .hero h2 { font-size: 28px; line-height: 1.3; margin-bottom: 12px; }
+  .hero p { font-size: 14px; color: #ccfbf1; margin-bottom: 20px; }
+  .btn-main { display: inline-block; background: var(--amber); color: #0f172a; font-weight: 700; padding: 12px 22px; border-radius: 10px; text-decoration: none; font-size: 14px; border: none; cursor: pointer; }
+  .hero-card { background: #fff; color: #1e293b; border-radius: 16px; padding: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.25); }
+  .doc-mini { padding: 12px; border-radius: 10px; margin-top: 10px; }
+  .doc-1 { background: #f0fdfa; border: 1px solid #99f6e4; }
+  .doc-2 { background: #fdf2f8; border: 1px solid #fbcfe8; }
+  .tag { display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 4px; color: #fff; }
+  .bg-teal { background: var(--teal); }
+  .bg-rose { background: var(--rose); }
+  .section { padding: 44px 20px; }
+  .sec-title { text-align: center; margin-bottom: 30px; }
+  .sec-title h2 { font-size: 24px; color: var(--slate); margin-top: 6px; }
+  .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 22px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 16px; }
+  .card { background: #fff; border-radius: 14px; border: 1px solid #e2e8f0; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+  .card-head { padding: 16px 20px; color: #fff; }
+  .card-body { padding: 20px; font-size: 14px; }
+  .card-body ul { padding-left: 18px; margin: 8px 0; }
+  .card-body li { margin-bottom: 6px; }
+  .pkg-sec { background: var(--slate); color: #fff; padding: 44px 20px; }
+  .pkg-card { background: #1e293b; border: 1px solid #334155; border-radius: 14px; padding: 18px; display: flex; flex-direction: column; justify-content: space-between; }
+  .pkg-card.popular { border: 2px solid var(--amber); }
+  .price { font-size: 22px; font-weight: 800; color: #fbbf24; margin: 12px 0; }
+  .form-box { max-width: 800px; margin: 0 auto; background: #fff; border-radius: 16px; border: 1px solid #cbd5e1; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.08); }
+  .form-body { padding: 24px; }
+  .form-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 14px; margin-bottom: 14px; }
+  label { display: block; font-size: 13px; font-weight: 700; margin-bottom: 4px; color: #334155; }
+  input, select, textarea { width: 100%; padding: 10px 12px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 14px; }
+  .legal-box { background: #f8fafc; border: 1px solid #cbd5e1; padding: 14px; border-radius: 10px; font-size: 12px; margin: 14px 0; }
+  .legal-box label { font-weight: 400; display: flex; gap: 8px; align-items: flex-start; margin-top: 8px; cursor: pointer; }
+  .legal-box input { width: auto; margin-top: 4px; }
+  .pay-row { display: flex; gap: 8px; flex-wrap: wrap; }
+  .pay-row select { flex: 1; min-width: 160px; }
+  footer { background: #020617; color: #94a3b8; padding: 32px 20px; font-size: 12px; }
+
+  .note-ref { background: #f0fdfa; border: 1px solid #99f6e4; border-radius: 12px; padding: 16px 20px; font-size: 14px; display: flex; gap: 12px; align-items: flex-start; }
+  .stars { color: #f59e0b; letter-spacing: 2px; }
+  .rev-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 16px; font-size: 14px; }
+  .rev-sum { text-align: center; font-size: 15px; margin-bottom: 16px; }
+  .star-pick { display: flex; gap: 6px; margin-bottom: 14px; }
+  .star-pick button { border: 1px solid #cbd5e1; background: #fff; border-radius: 8px; font-size: 22px; padding: 4px 10px; cursor: pointer; color: #cbd5e1; }
+  .star-pick button.on { color: #f59e0b; border-color: #f59e0b; background: #fffbeb; }
+  .rev-note { font-size: 11px; color: #64748b; margin-top: 10px; }
+  .stat-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 20px 12px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+  .stat-num { font-size: 32px; font-weight: 800; color: var(--teal); line-height: 1.2; }
+  .stat-lbl { font-size: 13px; font-weight: 700; color: #334155; margin-top: 4px; }
+  .stat-sub { font-size: 11px; color: #64748b; margin-top: 2px; }
+  .wa-float { position: fixed; right: 16px; bottom: calc(16px + env(safe-area-inset-bottom, 0px)); z-index: 150; background: #25d366; color: #fff; width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; text-decoration: none; box-shadow: 0 6px 18px rgba(0,0,0,0.3); }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <span class="badge-bmdc">BM&amp;DC Compliant</span>
+  বিএমডিসি টেলিমেডিসিন নীতিমালা অনুযায়ী পরিচালিত • জরুরি অবস্থায় (তীব্র শ্বাসকষ্ট/বুকে ব্যথা) নিকটস্থ হাসপাতালের জরুরি বিভাগে যান।
+</div>
+
+<header>
+  <div class="brand">
+    <div class="logo">M+</div>
+    <div>
+      <h1>ডা. মিহাম ও ডা. মুনা ওয়ান-স্টপ হেলথ সার্ভিস</h1>
+      <p>বক্ষব্যাধি, মেডিসিন এবং চর্ম ও অ্যালার্জি কেয়ার • কেরানীগঞ্জ | মুন্সীগঞ্জ | জুরাইন | কাতার ও প্রবাসী টেলি-হেলথ</p>
+    </div>
+  </div>
+  <div class="currency-bar">
+    <button class="c-btn active" onclick="setCurr('QA', this)">🇶🇦 Qatar (QAR)</button>
+    <button class="c-btn" onclick="setCurr('SA', this)">🇸🇦 Saudi (SAR)</button>
+    <button class="c-btn" onclick="setCurr('AE', this)">🇦🇪 UAE (AED)</button>
+    <button class="c-btn" onclick="setCurr('BD', this)">🇧🇩 BD (৳ BDT)</button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="pill">🇶🇦 🇸🇦 🇦🇪 🇧🇩 কাতার ও মধ্যপ্রাচ্যের প্রবাসী এবং বাংলাদেশে থাকা পরিবারের জন্য</span>
+      <h2>এক ছাদের নিচে শ্বাসকষ্ট, দীর্ঘমেয়াদী কাশি, মেডিসিন এবং চর্ম ও অ্যালার্জি রোগের বিজ্ঞানসম্মত পরামর্শ</h2>
+      <p>কাতার ও মধ্যপ্রাচ্যের প্রবাসীদের ধূলিকণা ও এসি-জনিত শ্বাসকষ্ট, অ্যাজমা, একজিমা, ছত্রাকজনিত চর্মরোগ ও ডায়াবেটিসের জন্য অনলাইনে সরাসরি ভিডিও কনসালটেশন এবং কেরানীগঞ্জ ও মুন্সীগঞ্জ চেম্বারে প্রবাসীদের বাবা-মায়ের জন্য বেডসাইড লাং আল্ট্রাসাউন্ড (POCUS), ইসিজি ও স্পাইরোমেট্রি সুবিধা।</p>
+      <a href="#book" class="btn-main">📅 অনলাইন / চেম্বার অ্যাপয়েন্টমেন্ট নিন</a>
+      <a class="btn-main wa-link" target="_blank" rel="noopener" style="background:#25d366; color:#fff; margin-top:8px;">💬 WhatsApp-এ মেসেজ করুন</a>
+      <a href="https://whatsapp.com/channel/0029VbBijeLL2AU7KoMe1V1x" target="_blank" rel="noopener" class="btn-main" style="background:rgba(255,255,255,0.15); color:#fff; border:1px solid rgba(255,255,255,0.4); margin-top:8px;">📢 WhatsApp চ্যানেলে যুক্ত হোন</a>
+    </div>
+
+    <div class="hero-card">
+      <div style="display:flex; justify-content:space-between; gap:8px; font-size:12px; font-weight:700; border-bottom:1px solid #e2e8f0; padding-bottom:8px;">
+        <span style="color:var(--teal);">DUAL-DOCTOR CARE</span>
+        <span id="tzText">🕒 কাতার সময়: সন্ধ্যা ৬:০০ - রাত ৮:০০</span>
+      </div>
+
+      <div class="doc-mini doc-1">
+        <span class="tag bg-teal">বক্ষব্যাধি ও মেডিসিন বিভাগ</span>
+        <h3 style="font-size:16px; margin-top:4px;">ডা. মেহেদী মনোয়ার হোসেন মিহাম</h3>
+        <p style="font-size:12px; font-weight:600; color:#334155;">MBBS (DNMC), PGT in Medicine (SSMC &amp; Mitford Hospital), FCPS Part-II Trainee (Dept. of Pulmonology, NIDCH)</p>
+        <p style="font-size:11px; color:#475569; margin-top:4px;">• Trained in Lung Ultrasound (POCUS) &amp; Spirometry • Member, European Respiratory Society (ERS)</p>
+      </div>
+
+      <div class="doc-mini doc-2">
+        <span class="tag bg-rose">চর্ম, অ্যালার্জি ও স্কিন কেয়ার বিভাগ</span>
+        <h3 style="font-size:16px; margin-top:4px;">ডা. মুনা</h3>
+        <p style="font-size:12px; font-weight:600; color:#334155;">MBBS, Medical Practitioner — Clinical Dermatology, Allergy &amp; Hair Care</p>
+        <p style="font-size:11px; color:#475569; margin-top:4px;">• একজিমা, ফাঙ্গাল ইনফেকশন (দাদ), সোরিয়াসিস, ব্রণ, মেছতা, চুল পড়া ও শিশুদের চর্মরোগ</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section container">
+  <div class="sec-title">
+    <span class="tag bg-teal">BM&amp;DC ETHICAL TRANSPARENCY</span>
+    <h2>চিকিৎসকদের একাডেমিক যোগ্যতা ও চিকিৎসার পরিধি</h2>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-head bg-teal">
+        <h3>ডা. মেহেদী মনোয়ার হোসেন মিহাম</h3>
+        <p style="font-size:12px; opacity:0.9;">চিকিৎসক — বক্ষব্যাধি ও মেডিসিন বিভাগ</p>
+      </div>
+      <div class="card-body">
+        <strong>🎓 একাডেমিক যোগ্যতা ও প্রশিক্ষণ:</strong>
+        <ul>
+          <li><strong>MBBS:</strong> ঢাকা ন্যাশনাল মেডিকেল কলেজ (DNMC)</li>
+          <li><strong>PGT (Medicine - 2 Years):</strong> স্যার সলিমুল্লাহ মেডিকেল কলেজ ও মিটফোর্ড হাসপাতাল</li>
+          <li><strong>FCPS Part-II Trainee (SST-2):</strong> পালমোনোলজি বিভাগ, জাতীয় বক্ষব্যাধি ইনস্টিটিউট ও হাসপাতাল (NIDCH), মহাখালী, ঢাকা</li>
+          <li><strong>বিশেষ দক্ষতা:</strong> বেডসাইড লাং আল্ট্রাসাউন্ড (POCUS), স্পাইরোমেট্রি, ইসিজি ও পালমোনারি রিহ্যাবিলিটেশন</li>
+        </ul>
+        <p style="font-size:12px; background:#f1f5f9; padding:10px; border-radius:8px; margin-top:10px;">
+          <strong>রোগসমূহ:</strong> হাঁপানি (Asthma), দীর্ঘমেয়াদী কাশি (COPD), ফুসফুসে পানি জমা, নিউমোনিয়া, অ্যালার্জিক কাশি, ডায়াবেটিস ও প্রেশার।
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head bg-rose">
+        <h3>ডা. মুনা</h3>
+        <p style="font-size:12px; opacity:0.9;">চিকিৎসক — চর্ম, অ্যালার্জি, নখ ও চুল বিভাগ</p>
+      </div>
+      <div class="card-body">
+        <strong>🎓 একাডেমিক যোগ্যতা ও প্রশিক্ষণ:</strong>
+        <ul>
+          <li><strong>MBBS:</strong> রেজিস্টার্ড মেডিকেল প্র্যাকটিশনার (BM&amp;DC)</li>
+          <li><strong>ক্লিনিক্যাল প্র্যাকটিস:</strong> চর্মরোগ, কিউটেনিয়াস অ্যালার্জি ও স্কিন কেয়ার প্র্যাকটিস</li>
+          <li><strong>বিশেষ ফোকাস:</strong> মধ্যপ্রাচ্যের প্রবাসীদের আবহাওয়া ও পানির কারণে সৃষ্ট একজিমা, ছত্রাক সংক্রমণ এবং নারী ও শিশুদের চর্মরোগ</li>
+        </ul>
+        <p style="font-size:12px; background:#f1f5f9; padding:10px; border-radius:8px; margin-top:10px;">
+          <strong>রোগসমূহ:</strong> দাদ/ফাঙ্গাল ইনফেকশন, একজিমা, সোরিয়াসিস, আর্টিকারিয়া (চাকা চাকা চুলকানি), ব্রণ, মেছতা ও চুল পড়া।
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section container" style="padding-bottom:0;">
+  <div class="sec-title">
+    <span class="tag bg-teal">আমাদের সেবার পরিসংখ্যান</span>
+    <h2>সংখ্যায় আমাদের চেম্বার</h2>
+  </div>
+  <div class="grid-4">
+    <div class="stat-card"><div class="stat-num">১,৫০০+</div><div class="stat-lbl">রোগী দেখা হয়েছে</div><div class="stat-sub">জুলাই ২০২৪ – অক্টোবর ২০২৬</div></div>
+    <div class="stat-card"><div class="stat-num">১১৯</div><div class="stat-lbl">এক মাসে সর্বোচ্চ রোগী</div><div class="stat-sub">সেপ্টেম্বর ২০২৬</div></div>
+    <div class="stat-card"><div class="stat-num">৭৫+</div><div class="stat-lbl">প্রসিডিউর সম্পন্ন</div><div class="stat-sub">জানুয়ারি – অক্টোবর ২০২৬</div></div>
+    <div class="stat-card"><div class="stat-num">২০+</div><div class="stat-lbl">রোগী বিনামূল্যে সেবা পেয়েছেন</div><div class="stat-sub">২০২৬ সালে</div></div>
+  </div>
+  <p style="font-size:11px; color:#64748b; text-align:center; margin-top:10px;">চেম্বারের নিজস্ব রেকর্ড অনুযায়ী। সংখ্যাগুলো সাম্প্রতিক রেকর্ড থেকে গণনা করা।</p>
+</section>
+
+<section class="section container" style="padding-top:0;">
+  <div class="note-ref">
+    <span style="font-size:22px;">🤝</span>
+    <div><strong>প্রয়োজনে বিশেষজ্ঞের কাছে রেফার:</strong> রোগীর সমস্যা আমাদের সেবার পরিধির বাইরে হলে বা আরও বিশেষায়িত চিকিৎসা প্রয়োজন হলে, আমরা রোগীকে যথাযথ অভিজ্ঞ বিশেষজ্ঞ চিকিৎসকের কাছে রেফার করব। রোগীর নিরাপত্তা ও সঠিক চিকিৎসাই আমাদের অগ্রাধিকার।</div>
+  </div>
+</section>
+
+<section class="pkg-sec">
+  <div class="container">
+    <div class="sec-title">
+      <span class="tag" style="background:var(--amber); color:#000;">🇶🇦 কাতার ও প্রবাসী স্পেশাল ডেস্ক</span>
+      <h2 style="color:#fff;">প্রবাসী ও তাঁদের পরিবারের জন্য ৪টি বিশেষ প্যাকেজ</h2>
+      <p style="font-size:13px; color:#cbd5e1;">পেমেন্ট মাধ্যম: Ooredoo Money • TapTap Send • bKash Remittance • QNB Local Transfer</p>
+    </div>
+
+    <div class="grid-4">
+      <div class="pkg-card">
+        <div>
+          <span class="tag bg-teal">বক্ষব্যাধি ও মেডিসিন</span>
+          <h3 style="margin-top:8px; font-size:17px;">শ্বাসকষ্ট, কাশি ও মেডিসিন কনসালটেশন</h3>
+          <p style="font-size:12px; color:#cbd5e1; margin-top:6px;">ধূলিকণা ও এসি জনিত কাশি, অ্যাজমা, ইনহেলার গাইড ও ডায়াবেটিসের পরামর্শ + জেনেরিক ট্রিটমেন্ট সামারি।</p>
+        </div>
+        <div>
+          <div class="price" id="p1">20 QAR</div>
+          <button class="btn-main" style="width:100%; padding:8px;" onclick="pickPkg('p1')">বুকিং করুন</button>
+        </div>
+      </div>
+
+      <div class="pkg-card">
+        <div>
+          <span class="tag bg-rose">চর্ম, অ্যালার্জি ও চুল</span>
+          <h3 style="margin-top:8px; font-size:17px;">স্কিন, অ্যালার্জি ও হেয়ার কনসালটেশন</h3>
+          <p style="font-size:12px; color:#cbd5e1; margin-top:6px;">হোয়াটসঅ্যাপে আক্রান্ত স্থানের ছবি পাঠিয়ে ও ভিডিও কলে ডা. মুনার কাছে একজিমা, দাদ, ব্রণ ও চুল পড়ার পরামর্শ।</p>
+        </div>
+        <div>
+          <div class="price" id="p2">20 QAR</div>
+          <button class="btn-main" style="width:100%; padding:8px;" onclick="pickPkg('p2')">বুকিং করুন</button>
+        </div>
+      </div>
+
+      <div class="pkg-card popular">
+        <div>
+          <span class="tag" style="background:var(--amber); color:#000;">জনপ্রিয় ডুয়াল কম্বো</span>
+          <h3 style="margin-top:8px; font-size:17px;">অ্যালার্জি-অ্যাজমা ও স্কিন কম্বো (২ জন ডাক্তার)</h3>
+          <p style="font-size:12px; color:#cbd5e1; margin-top:6px;">যাদের একইসাথে শরীর চুলকানি/একজিমা এবং হাঁপানি বা অ্যালার্জিক সর্দি-কাশি রয়েছে, তাদের জন্য সমন্বিত পরামর্শ।</p>
+        </div>
+        <div>
+          <div class="price" id="p3">32 QAR</div>
+          <button class="btn-main" style="width:100%; padding:8px;" onclick="pickPkg('p3')">বুকিং করুন</button>
+        </div>
+      </div>
+
+      <div class="pkg-card">
+        <div>
+          <span class="tag" style="background:#10b981; color:#000;">NRB Parents Care</span>
+          <h3 style="margin-top:8px; font-size:17px;">প্রবাসীদের বাবা-মায়ের ওয়ান-স্টপ চেম্বার চেকআপ</h3>
+          <p style="font-size:12px; color:#cbd5e1; margin-top:6px;">কেরানীগঞ্জ/মুন্সীগঞ্জ চেম্বারে বাবা-মায়ের কনসালটেশন + লাং আল্ট্রাসাউন্ড (POCUS) + ইসিজি + স্পাইরোমেট্রি + প্রবাসী সন্তানকে ভিডিও ব্রিফিং।</p>
+        </div>
+        <div>
+          <div class="price" id="p4">48 QAR</div>
+          <button class="btn-main" style="width:100%; padding:8px;" onclick="pickPkg('p4')">বুকিং করুন</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section container" id="reviews">
+  <div class="sec-title">
+    <span class="tag bg-teal">রোগীদের অভিজ্ঞতা</span>
+    <h2>রোগীরা কী বলছেন</h2>
+  </div>
+  <div class="rev-sum" id="revSummary"></div>
+  <div class="grid-2" id="revList"></div>
+  <div class="form-box" style="margin-top:24px;">
+    <div class="card-head bg-teal"><h3>⭐ আপনার অভিজ্ঞতা জানান</h3></div>
+    <form class="form-body" onsubmit="sendReview(event)">
+      <label>আপনার রেটিং *</label>
+      <div class="star-pick" id="starPick">
+        <button type="button" onclick="setStars(1)">★</button>
+        <button type="button" onclick="setStars(2)">★</button>
+        <button type="button" onclick="setStars(3)">★</button>
+        <button type="button" onclick="setStars(4)">★</button>
+        <button type="button" onclick="setStars(5)">★</button>
+      </div>
+      <div class="form-row">
+        <div>
+          <label>কার কাছে সেবা নিয়েছেন? *</label>
+          <select id="rDoc">
+            <option>ডা. মিহাম</option>
+            <option>ডা. মুনা</option>
+          </select>
+        </div>
+        <div>
+          <label>আপনি কি অন্যদের সুপারিশ করবেন? *</label>
+          <select id="rRec">
+            <option value="yes">হ্যাঁ, সুপারিশ করব</option>
+            <option value="no">না</option>
+          </select>
+        </div>
+        <div>
+          <label>নাম (ঐচ্ছিক)</label>
+          <input type="text" id="rName" placeholder="নাম বা আদ্যক্ষর">
+        </div>
+      </div>
+      <label>আপনার অভিজ্ঞতা *</label>
+      <textarea id="rText" rows="3" required placeholder="সেবা কেমন লাগল সংক্ষেপে লিখুন..."></textarea>
+      <div class="legal-box">
+        <label><input type="checkbox" required><span>আমার মতামত সাইটে প্রকাশে আমি সম্মতি দিচ্ছি। আমার ব্যক্তিগত স্বাস্থ্য তথ্য এতে নেই।</span></label>
+      </div>
+      <button type="submit" class="btn-main" style="width:100%; background:var(--teal); color:#fff;">রিভিউ পাঠান</button>
+      <p class="rev-note">রিভিউ যাচাইয়ের পর প্রকাশ করা হয়। রিভিউ রোগীর ব্যক্তিগত অভিজ্ঞতা; চিকিৎসার ফল ব্যক্তিভেদে ভিন্ন হতে পারে।</p>
+    </form>
+  </div>
+</section>
+
+<section id="book" class="section">
+  <div class="form-box">
+    <div class="card-head bg-teal">
+      <h2>📲 অ্যাপয়েন্টমেন্ট ও পেমেন্ট বুকিং ফর্ম</h2>
+      <p style="font-size:12px; opacity:0.9;">ফর্মটি পূরণ করে সাবমিট করলে সরাসরি হোয়াটসঅ্যাপে বুকিং মেসেজ তৈরি হয়ে যাবে।</p>
+    </div>
+    <form class="form-body" onsubmit="sendWA(event)">
+      <div class="form-row">
+        <div>
+          <label>রোগীর নাম *</label>
+          <input type="text" id="fName" required placeholder="যেমন: মো. করিম উল্লাহ">
+        </div>
+        <div>
+          <label>বয়স ও লিঙ্গ *</label>
+          <input type="text" id="fAge" required placeholder="যেমন: ৩৫ বছর, পুরুষ">
+        </div>
+        <div>
+          <label>হোয়াটসঅ্যাপ নম্বর *</label>
+          <input type="text" id="fPhone" required placeholder="+974 XXXXXXXX / 017XXXXXXXX">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div>
+          <label>কোন সেবা বা প্যাকেজ নিতে চান? *</label>
+          <select id="fPkg" onchange="syncFee()">
+            <option value="p1">বক্ষব্যাধি ও মেডিসিন — ডা. মেহেদী মনোয়ার হোসেন মিহাম</option>
+            <option value="p2">চর্ম, অ্যালার্জি ও হেয়ার কেয়ার — ডা. মুনা</option>
+            <option value="p3">অ্যালার্জি-অ্যাজমা ও স্কিন ডুয়াল কম্বো (ডা. মিহাম + ডা. মুনা)</option>
+            <option value="p4">প্রবাসীদের বাবা-মায়ের ওয়ান-স্টপ চেম্বার চেকআপ (POCUS+ECG+Spirometry)</option>
+          </select>
+        </div>
+        <div>
+          <label>পেমেন্ট মাধ্যম ও নির্ধারিত ফি *</label>
+          <div class="pay-row">
+            <select id="fPay">
+              <option>bKash Remittance / TapTap Send / Ooredoo Money</option>
+              <option>Qatar Local Transfer (QNB / Fawran Coordinator)</option>
+              <option>বাংলাদেশ বিকাশ / নগদ (Local BDT)</option>
+            </select>
+            <div id="feeBox" style="background:#fef3c7; border:1px solid #f59e0b; padding:8px 14px; border-radius:8px; font-weight:800; white-space:nowrap;">20 QAR</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <label>প্রধান শারীরিক সমস্যা সংক্ষেপে লিখুন *</label>
+        <textarea id="fSymp" rows="2" required placeholder="শ্বাসকষ্ট, কাশি, চর্মরোগ বা অন্যান্য সমস্যা লিখুন..."></textarea>
+      </div>
+
+      <div class="legal-box">
+        <strong>🛡️ মেডিকোলিগ্যাল ঘোষণাপত্র ও সম্মতি (BM&amp;DC Telemedicine Compliance):</strong>
+        <label>
+          <input type="checkbox" required>
+          <span><strong>১. জরুরি অবস্থা নয়:</strong> রোগীর বর্তমানে তীব্র বুকে ব্যথা, অজ্ঞান হওয়া বা কাশির সাথে প্রচুর রক্ত যাওয়ার মতো জরুরি অবস্থা নেই।</span>
+        </label>
+        <label>
+          <input type="checkbox" required>
+          <span><strong>২. আন্তর্জাতিক টেলি-কনসেন্ট:</strong> বাংলাদেশের বাইরে অবস্থানরত রোগীদের ক্ষেত্রে এই পরামর্শটি <em>"Medical Second Opinion, Report Interpretation &amp; Health Counseling"</em> হিসেবে প্রযোজ্য এবং আন্তর্জাতিক <strong>Generic Name</strong>-এ ক্লিনিক্যাল সামারি প্রদান করা হবে।</span>
+        </label>
+      </div>
+
+      <button type="submit" class="btn-main" style="width:100%; background:var(--teal); color:#fff; font-size:16px;">✅ সম্মতি নিশ্চিত করে হোয়াটসঅ্যাপে বুকিং পাঠান</button>
+    </form>
+  </div>
+</section>
+
+<section class="section container" style="text-align:center; padding-top:0;">
+  <div class="sec-title"><span class="tag bg-teal">কমিউনিটি</span><h2>আমাদের সাথে যুক্ত থাকুন</h2></div>
+  <div style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center;">
+    <a class="btn-main" href="https://www.facebook.com/share/1FNUVmkLqn/" target="_blank" rel="noopener" style="background:#1877f2; color:#fff;">📘 ফেসবুক পেজ</a>
+    <a class="btn-main" href="https://www.facebook.com/share/g/19NR4LAniN/" target="_blank" rel="noopener" style="background:#0f4fb8; color:#fff;">👥 ফেসবুক গ্রুপ</a>
+    <a class="btn-main" href="https://whatsapp.com/channel/0029VbBijeLL2AU7KoMe1V1x" target="_blank" rel="noopener" style="background:#25d366; color:#fff;">📢 WhatsApp চ্যানেল</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container grid-2">
+    <div>
+      <strong style="color:#fff;">📚 ক্লিনিক্যাল রেফারেন্স বুকস (Evidence-Based Practice):</strong>
+      <p style="margin-top:6px;">• <em>Murray &amp; Nadel's Textbook of Respiratory Medicine</em> (7th Ed.) &amp; <em>Fishman's Pulmonary Diseases</em> (6th Ed.)<br>
+      • <em>Harrison's Principles of Internal Medicine</em> (21st Ed.) &amp; <em>Davidson's Principles and Practice of Medicine</em> (24th Ed.)<br>
+      • <em>Rook's Textbook of Dermatology</em> (9th Ed.) &amp; <em>Fitzpatrick's Clinical Dermatology</em> (9th Ed.)</p>
+    </div>
+    <div>
+      <strong style="color:#fff;">📍 চেম্বার ঠিকানা ও মেডিকোলিগ্যাল নোটিশ:</strong>
+      <p style="margin-top:6px;">• মডার্ন মেডিকেল সেন্টার / নিউ লাইফ হাসপাতাল (কেরানীগঞ্জ, ঢাকা ও মুন্সীগঞ্জ) / জিনোম হাসপাতাল (জুরাইন, ঢাকা)।<br>
+      • বিএমডিসি (BM&amp;DC) নীতিমালা অনুযায়ী চিকিৎসকদের প্রকৃত একাডেমিক যোগ্যতা ও চলমান প্রশিক্ষণ সুস্পষ্টভাবে প্রদর্শিত হয়েছে।<br>
+      • 📢 <a href="https://whatsapp.com/channel/0029VbBijeLL2AU7KoMe1V1x" target="_blank" rel="noopener" style="color:#5eead4;">আমাদের WhatsApp চ্যানেল</a></p>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float wa-link" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+
+<script>
+  var curr = 'QA';
+  var rates = {
+    QA: { tz: '🕒 কাতার সময়: সন্ধ্যা ৬:০০ - রাত ৮:০০', p1: '20 QAR', p2: '20 QAR', p3: '32 QAR', p4: '48 QAR' },
+    SA: { tz: '🕒 সৌদি সময়: সন্ধ্যা ৬:০০ - রাত ৮:০০', p1: '50 SAR', p2: '50 SAR', p3: '80 SAR', p4: '120 SAR' },
+    AE: { tz: '🕒 দুবাই সময়: সন্ধ্যা ৭:০০ - রাত ৯:০০', p1: '50 AED', p2: '50 AED', p3: '80 AED', p4: '120 AED' },
+    BD: { tz: '🕒 বাংলাদেশ সময়: রাত ৯:০০ - রাত ১১:০০', p1: '১,০০০ ৳', p2: '১,০০০ ৳', p3: '১,৬০০ ৳', p4: '৩,৫০০ ৳' }
+  };
+
+  // এখানে আপনার আসল হোয়াটসঅ্যাপ নম্বর বসান (দেশের কোডসহ, + ছাড়া)
+  var WA_NUMBER = '8801304529548';
+
+  function setCurr(c, btn) {
+    curr = c;
+    document.querySelectorAll('.c-btn').forEach(function (b) { b.classList.remove('active'); });
+    btn.classList.add('active');
+    var r = rates[c];
+    document.getElementById('tzText').innerText = r.tz;
+    ['p1', 'p2', 'p3', 'p4'].forEach(function (k) { document.getElementById(k).innerText = r[k]; });
+    syncFee();
+  }
+
+  function syncFee() {
+    var k = document.getElementById('fPkg').value;
+    document.getElementById('feeBox').innerText = rates[curr][k];
+  }
+
+  function pickPkg(k) {
+    document.getElementById('fPkg').value = k;
+    syncFee();
+    document.getElementById('book').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function sendWA(e) {
+    e.preventDefault();
+    var name = document.getElementById('fName').value;
+    var age = document.getElementById('fAge').value;
+    var phone = document.getElementById('fPhone').value;
+    var pkgSel = document.getElementById('fPkg');
+    var pkgText = pkgSel.options[pkgSel.selectedIndex].text;
+    var fee = document.getElementById('feeBox').innerText;
+    var pay = document.getElementById('fPay').value;
+    var symp = document.getElementById('fSymp').value;
+
+    var text = 'আসসালামু আলাইকুম, আমি অ্যাপয়েন্টমেন্ট বুক করতে চাই:\n\n' +
+      '👤 রোগী: ' + name + ' (' + age + ')\n' +
+      '📞 হোয়াটসঅ্যাপ: ' + phone + '\n' +
+      '🩺 বিভাগ: ' + pkgText + '\n' +
+      '💳 ফি: ' + fee + ' (' + pay + ')\n' +
+      '📝 সমস্যা: ' + symp + '\n' +
+      '✅ BM&DC Telemedicine Consent: সম্মতি প্রদান করা হয়েছে।';
+
+    window.open('https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(text), '_blank');
+  }
+
+  // ===== রোগীদের রিভিউ =====
+  // শুধু আসল রোগীর সম্মতিপ্রাপ্ত রিভিউ এখানে যোগ করুন। উদাহরণ:
+  // { name: 'ক.', doctor: 'ডা. মিহাম', stars: 5, recommend: true, text: 'খুব ভালো পরামর্শ পেয়েছি।' },
+  var REVIEWS = [
+  ];
+  var rStars = 0;
+
+  function starStr(n) { return '★'.repeat(n) + '☆'.repeat(5 - n); }
+
+  function renderReviews() {
+    var sum = document.getElementById('revSummary');
+    var list = document.getElementById('revList');
+    list.innerHTML = '';
+    if (!REVIEWS.length) {
+      sum.textContent = 'এখনো কোনো রিভিউ প্রকাশিত হয়নি। আপনার অভিজ্ঞতা জানাতে নিচের ফর্ম ব্যবহার করুন।';
+      return;
+    }
+    var total = 0, rec = 0;
+    REVIEWS.forEach(function (r) { total += r.stars; if (r.recommend) rec++; });
+    var avg = (total / REVIEWS.length).toFixed(1);
+    var pct = Math.round(rec * 100 / REVIEWS.length);
+    sum.innerHTML = '<strong style="font-size:28px;">' + avg + '</strong> / 5 <span class="stars">' + starStr(Math.round(avg)) + '</span><br>' +
+      REVIEWS.length + 'টি রিভিউ • ' + pct + '% রোগী সুপারিশ করেছেন';
+    REVIEWS.forEach(function (r) {
+      var d = document.createElement('div');
+      d.className = 'rev-card';
+      var st = document.createElement('div');
+      st.className = 'stars';
+      st.textContent = starStr(r.stars);
+      var tx = document.createElement('p');
+      tx.style.margin = '8px 0';
+      tx.textContent = r.text;
+      var meta = document.createElement('p');
+      meta.style.cssText = 'font-size:12px;color:#64748b;';
+      meta.textContent = (r.name || 'একজন রোগী') + ' • ' + r.doctor + ' • ' + (r.recommend ? '👍 সুপারিশ করেছেন' : 'সুপারিশ করেননি');
+      d.appendChild(st); d.appendChild(tx); d.appendChild(meta);
+      list.appendChild(d);
+    });
+  }
+
+  function setStars(n) {
+    rStars = n;
+    var b = document.querySelectorAll('#starPick button');
+    for (var i = 0; i < b.length; i++) { b[i].classList.toggle('on', i < n); }
+  }
+
+  function sendReview(e) {
+    e.preventDefault();
+    if (!rStars) { alert('অনুগ্রহ করে রেটিং বেছে নিন।'); return; }
+    var text = 'আসসালামু আলাইকুম, আমার রিভিউ:\n\n' +
+      '⭐ রেটিং: ' + rStars + '/5\n' +
+      '🩺 চিকিৎসক: ' + document.getElementById('rDoc').value + '\n' +
+      '👍 সুপারিশ: ' + (document.getElementById('rRec').value === 'yes' ? 'হ্যাঁ' : 'না') + '\n' +
+      '👤 নাম: ' + (document.getElementById('rName').value || 'প্রকাশ করতে চাই না') + '\n' +
+      '📝 অভিজ্ঞতা: ' + document.getElementById('rText').value + '\n' +
+      '✅ প্রকাশে সম্মতি দেওয়া হয়েছে।';
+    window.open('https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(text), '_blank');
+  }
+
+  renderReviews();
+
+  document.querySelectorAll('.wa-link').forEach(function (a) {
+    a.href = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent('আসসালামু আলাইকুম, আমি একটি বিষয়ে জানতে চাই।');
+  });
+</script>
+</body>
+</html>
